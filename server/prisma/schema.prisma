@@ -1,0 +1,73 @@
+
+
+datasource db {
+  provider = "postgresql"
+  url      =   "postgresql://neridan@localhost:5432/ecommerce?schema=public"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+    id Int @id @default(autoincrement())
+    image String 
+    description String
+    price Int
+    name String 
+    
+    @@map("products")
+}
+enum Role {
+  USER
+  ADMIN
+}
+model User {
+  id           String   @id @default(cuid())
+  role          Role      @default(USER)
+  name          String?
+  email         String?   
+  password      String?
+  @@map("users")
+  accounts      Account[]
+  sessions      Session[]
+
+}
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  
+  type              String
+  provider          String  @unique
+  providerAccountId String  @unique
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user User @relation(fields:[userId],references: [id],onDelete: Cascade)
+
+  
+  @@map("accounts")
+}
+
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String   
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete:Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String   @unique
+  token      String   @unique
+  expires    DateTime
+
+ 
+  @@map("verificationtokens")
+}
