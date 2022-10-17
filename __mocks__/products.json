@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "image": "https://cdn.shopify.com/s/files/1/0209/0478/products/TS_10f2b917-7939-42e0-b96c-a11df4919dac_640x.jpg?v=1641933622",
+    "description": "do ciecia",
+    "price": 8,
+    "name": "Scissors"
+  },
+  {
+    "id": 2,
+    "image": "https://brylove.pl/data/gfx/pictures/medium/3/7/273_1.jpg",
+    "description": "przeciw sloncu",
+    "price": 30,
+    "name": "Sunglasses"
+  },
+  {
+    "id": 3,
+    "image": "https://media.dior.com/couture/ecommerce/media/catalog/product/9/e/1594849779_043J615A0589_C980_E08_GHC.jpg?imwidth=800",
+    "description": "do noszenia",
+    "price": 70,
+    "name": "T-shirt"
+  },
+  {
+    "id": 4,
+    "image": "https://static.zara.net/photos///2022/I/0/2/p/9065/339/800/2/w/750/9065339800_6_1_1.jpg?ts=1662559548688",
+    "description": "na zime",
+    "price": 50,
+    "name": "Beanie Hat"
+  }
+]
